@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>MASTER PLAN – Google Ads | Đà Nẵng Ăn Gì?</title>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root {
     --ink: #0e0f0c;
@@ -182,7 +182,6 @@
     justify-content: space-between;
     gap: 16px;
   }
-  .week-header .wh-left {}
   .week-header .phase-tag {
     font-size: 10px;
     font-weight: 700;
@@ -351,7 +350,7 @@
     margin-bottom: 28px;
   }
 
-  /* TOTAL KPI TABLE */
+  /* TOTAL KPI */
   .kpi-total-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -382,6 +381,61 @@
   .kpi-total-card .note {
     font-size: 12px;
     color: var(--muted);
+  }
+
+  /* PROGRESSION GRID LAYOUT (Replaced Table) */
+  .prog-grid {
+    display: flex;
+    flex-direction: column;
+    min-width: 800px; /* Ensure content doesn't squeeze too much on mobile */
+    font-size: 13px;
+  }
+  .prog-row {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    border-top: 1px solid var(--border);
+  }
+  .prog-header {
+    background: var(--paper);
+    font-weight: 600;
+    color: var(--muted);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+  .prog-cell {
+    padding: 12px 16px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .prog-cell.left {
+    text-align: left;
+    justify-content: flex-start;
+    padding-left: 20px;
+  }
+  .prog-row.alt {
+    background: rgba(0,0,0,0.01);
+  }
+  .prog-row.total {
+    border-top: 2px solid var(--ink);
+    background: var(--ink);
+    color: #fff;
+  }
+  .prog-row.total .prog-cell {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    color: #e8650a;
+  }
+  .prog-row.total .prog-cell.left {
+    color: #fff;
+    font-weight: 800;
+  }
+  .prog-row.total .prog-cell.note {
+    color: rgba(255,255,255,0.6);
+    font-size: 12px;
+    font-weight: 400;
   }
 
   /* STRATEGY SECTION */
@@ -437,17 +491,6 @@
     color: rgba(255,255,255,0.8);
   }
 
-  /* BADGE */
-  .badge {
-    display: inline-block;
-    font-size: 11px;
-    font-weight: 600;
-    padding: 3px 10px;
-    border-radius: 20px;
-    margin-right: 6px;
-    margin-bottom: 6px;
-  }
-
   /* TAG PILLS */
   .tag-row { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
   .tag {
@@ -464,14 +507,41 @@
   .tag.red { background: #fef0ee; color: #a02020; }
   .tag.gray { background: #f2f1ee; color: #555; }
 
+  /* RESPONSIVE DESIGN (Media Queries) */
+  @media (max-width: 992px) {
+    .weeks-row { grid-template-columns: repeat(3, 1fr); }
+    .kpi-total-grid { grid-template-columns: repeat(2, 1fr); }
+    .strategy-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (max-width: 768px) {
+    .cover, .timeline-strip, .footer { padding: 40px 24px; }
+    .main { padding: 0 24px; }
+    
+    .week-header { flex-direction: column; }
+    .week-header .obj-box { max-width: 100%; width: 100%; }
+    
+    .week-body { grid-template-columns: 1fr; }
+    .week-section { border-right: none; }
+    .week-section:nth-last-child(-n+2) { border-bottom: 1px solid var(--border); }
+    .week-section:last-child { border-bottom: none; }
+    
+    .weeks-row { grid-template-columns: repeat(2, 1fr); }
+    .kpi-total-grid { grid-template-columns: 1fr; }
+    .strategy-grid { grid-template-columns: 1fr; }
+    
+    .footer { flex-direction: column; text-align: center; gap: 16px; }
+    .footer > div { text-align: center !important; }
+  }
+
   @media print {
     body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .main, .cover, .timeline-strip, .footer { padding: 20px 40px; }
   }
 </style>
 </head>
 <body>
 
-<!-- COVER -->
 <div class="cover">
   <div class="cover-tag">Google Ads · Campaign Master Plan</div>
   <h1>MASTER PLAN<br><span>DETAIL PER WEEK</span></h1>
@@ -500,7 +570,6 @@
   </div>
 </div>
 
-<!-- TIMELINE STRIP -->
 <div class="timeline-strip">
   <p class="section-label">Campaign Roadmap Overview</p>
   <div class="weeks-row">
@@ -537,10 +606,8 @@
   </div>
 </div>
 
-<!-- MAIN CONTENT -->
 <div class="main" style="padding-top: 16px;">
 
-<!-- ===== WEEK 1 ===== -->
 <div class="week-card">
   <div class="week-header bg-w1">
     <div class="wh-left">
@@ -623,7 +690,6 @@
   </div>
 </div>
 
-<!-- ===== WEEK 2 ===== -->
 <div class="week-card">
   <div class="week-header bg-w2">
     <div class="wh-left">
@@ -706,7 +772,6 @@
   </div>
 </div>
 
-<!-- ===== WEEK 3 ===== -->
 <div class="week-card">
   <div class="week-header bg-w3">
     <div class="wh-left">
@@ -788,7 +853,6 @@
   </div>
 </div>
 
-<!-- ===== WEEK 4 ===== -->
 <div class="week-card">
   <div class="week-header bg-w4">
     <div class="wh-left">
@@ -870,7 +934,6 @@
   </div>
 </div>
 
-<!-- ===== WEEK 5 ===== -->
 <div class="week-card">
   <div class="week-header bg-w5">
     <div class="wh-left">
@@ -952,7 +1015,6 @@
   </div>
 </div>
 
-<!-- ===== WEEK 6 ===== -->
 <div class="week-card">
   <div class="week-header bg-w6">
     <div class="wh-left">
@@ -1035,10 +1097,8 @@
   </div>
 </div>
 
-<!-- DIVIDER -->
 <div class="divider"></div>
 
-<!-- OVERALL TIMELINE SUMMARY -->
 <div class="summary-section">
   <p class="section-label">Overall Campaign Summary</p>
   <div class="summary-title">Tổng KPI Toàn Campaign</div>
@@ -1077,103 +1137,97 @@
     </div>
   </div>
 
-  <!-- PROGRESSION TABLE -->
   <div style="background: var(--card); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; margin-top: 4px;">
     <div style="padding: 18px 24px; border-bottom: 1px solid var(--border);">
       <p style="font-family: 'Syne', sans-serif; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted);">Weekly KPI Progression</p>
     </div>
     <div style="overflow-x: auto;">
-      <table style="width: 100%; border-collapse: collapse; font-size: 13px;">
-        <thead>
-          <tr style="background: var(--paper);">
-            <th style="padding: 12px 20px; text-align: left; font-weight: 600; color: var(--muted); font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em;">Week</th>
-            <th style="padding: 12px 16px; text-align: center; font-weight: 600; color: var(--muted); font-size: 11px; text-transform: uppercase;">Impressions</th>
-            <th style="padding: 12px 16px; text-align: center; font-weight: 600; color: var(--muted); font-size: 11px; text-transform: uppercase;">Clicks</th>
-            <th style="padding: 12px 16px; text-align: center; font-weight: 600; color: var(--muted); font-size: 11px; text-transform: uppercase;">CTR</th>
-            <th style="padding: 12px 16px; text-align: center; font-weight: 600; color: var(--muted); font-size: 11px; text-transform: uppercase;">Avg. CPC</th>
-            <th style="padding: 12px 16px; text-align: center; font-weight: 600; color: var(--muted); font-size: 11px; text-transform: uppercase;">Bounce Rate</th>
-            <th style="padding: 12px 16px; text-align: center; font-weight: 600; color: var(--muted); font-size: 11px; text-transform: uppercase;">Session</th>
-            <th style="padding: 12px 16px; text-align: left; font-weight: 600; color: var(--muted); font-size: 11px; text-transform: uppercase;">Focus</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr style="border-top: 1px solid var(--border);">
-            <td style="padding: 12px 20px;"><span style="display: inline-flex; align-items: center; gap: 8px;"><span style="width: 8px; height: 8px; border-radius: 50%; background: var(--week1); display: inline-block;"></span><strong>W1</strong> 25–31/5</span></td>
-            <td style="padding: 12px 16px; text-align: center;">5,000+</td>
-            <td style="padding: 12px 16px; text-align: center;">100+</td>
-            <td style="padding: 12px 16px; text-align: center;">2.0%</td>
-            <td style="padding: 12px 16px; text-align: center;">&lt;3,500đ</td>
-            <td style="padding: 12px 16px; text-align: center;">&lt;70%</td>
-            <td style="padding: 12px 16px; text-align: center;">75s</td>
-            <td style="padding: 12px 16px;">Foundation</td>
-          </tr>
-          <tr style="border-top: 1px solid var(--border); background: rgba(0,0,0,0.01);">
-            <td style="padding: 12px 20px;"><span style="display: inline-flex; align-items: center; gap: 8px;"><span style="width: 8px; height: 8px; border-radius: 50%; background: var(--week2); display: inline-block;"></span><strong>W2</strong> 1–7/6</span></td>
-            <td style="padding: 12px 16px; text-align: center;">15,000+</td>
-            <td style="padding: 12px 16px; text-align: center;">400+</td>
-            <td style="padding: 12px 16px; text-align: center;">2.8%</td>
-            <td style="padding: 12px 16px; text-align: center;">&lt;3,000đ</td>
-            <td style="padding: 12px 16px; text-align: center;">&lt;65%</td>
-            <td style="padding: 12px 16px; text-align: center;">75s</td>
-            <td style="padding: 12px 16px;">Traffic Quality</td>
-          </tr>
-          <tr style="border-top: 1px solid var(--border);">
-            <td style="padding: 12px 20px;"><span style="display: inline-flex; align-items: center; gap: 8px;"><span style="width: 8px; height: 8px; border-radius: 50%; background: var(--week3); display: inline-block;"></span><strong>W3</strong> 8–14/6</span></td>
-            <td style="padding: 12px 16px; text-align: center;">22,000+</td>
-            <td style="padding: 12px 16px; text-align: center;">750+</td>
-            <td style="padding: 12px 16px; text-align: center;">3.5%</td>
-            <td style="padding: 12px 16px; text-align: center;">&lt;2,700đ</td>
-            <td style="padding: 12px 16px; text-align: center;">&lt;60%</td>
-            <td style="padding: 12px 16px; text-align: center;">90s</td>
-            <td style="padding: 12px 16px;">CTR &amp; Copy</td>
-          </tr>
-          <tr style="border-top: 1px solid var(--border); background: rgba(0,0,0,0.01);">
-            <td style="padding: 12px 20px;"><span style="display: inline-flex; align-items: center; gap: 8px;"><span style="width: 8px; height: 8px; border-radius: 50%; background: var(--week4); display: inline-block;"></span><strong>W4</strong> 15–21/6</span></td>
-            <td style="padding: 12px 16px; text-align: center;">28,000+</td>
-            <td style="padding: 12px 16px; text-align: center;">1,000+</td>
-            <td style="padding: 12px 16px; text-align: center;">3.8%</td>
-            <td style="padding: 12px 16px; text-align: center;">&lt;2,500đ</td>
-            <td style="padding: 12px 16px; text-align: center;">&lt;58%</td>
-            <td style="padding: 12px 16px; text-align: center;">100s</td>
-            <td style="padding: 12px 16px;">Remarketing</td>
-          </tr>
-          <tr style="border-top: 1px solid var(--border);">
-            <td style="padding: 12px 20px;"><span style="display: inline-flex; align-items: center; gap: 8px;"><span style="width: 8px; height: 8px; border-radius: 50%; background: var(--week5); display: inline-block;"></span><strong>W5</strong> 22–28/6</span></td>
-            <td style="padding: 12px 16px; text-align: center;">40,000+</td>
-            <td style="padding: 12px 16px; text-align: center;">1,600+</td>
-            <td style="padding: 12px 16px; text-align: center;">4.0%</td>
-            <td style="padding: 12px 16px; text-align: center;">&lt;2,200đ</td>
-            <td style="padding: 12px 16px; text-align: center;">&lt;55%</td>
-            <td style="padding: 12px 16px; text-align: center;">105s</td>
-            <td style="padding: 12px 16px;">Scaling</td>
-          </tr>
-          <tr style="border-top: 1px solid var(--border); background: rgba(0,0,0,0.01);">
-            <td style="padding: 12px 20px;"><span style="display: inline-flex; align-items: center; gap: 8px;"><span style="width: 8px; height: 8px; border-radius: 50%; background: var(--week6); display: inline-block;"></span><strong>W6</strong> 29/6–5/7</span></td>
-            <td style="padding: 12px 16px; text-align: center;">35,000+</td>
-            <td style="padding: 12px 16px; text-align: center;">1,500+</td>
-            <td style="padding: 12px 16px; text-align: center;">4.2%</td>
-            <td style="padding: 12px 16px; text-align: center;">&lt;2,000đ</td>
-            <td style="padding: 12px 16px; text-align: center;">&lt;55%</td>
-            <td style="padding: 12px 16px; text-align: center;">110s</td>
-            <td style="padding: 12px 16px;">Audit &amp; Report</td>
-          </tr>
-          <tr style="border-top: 2px solid var(--ink); background: var(--ink); color: #fff;">
-            <td style="padding: 12px 20px; font-family: 'Syne', sans-serif; font-weight: 800;">TOTAL</td>
-            <td style="padding: 12px 16px; text-align: center; font-family: 'Syne', sans-serif; font-weight: 700; color: #e8650a;">145,000+</td>
-            <td style="padding: 12px 16px; text-align: center; font-family: 'Syne', sans-serif; font-weight: 700; color: #e8650a;">5,350+</td>
-            <td style="padding: 12px 16px; text-align: center; font-family: 'Syne', sans-serif; font-weight: 700; color: #e8650a;">3.7% avg</td>
-            <td style="padding: 12px 16px; text-align: center; font-family: 'Syne', sans-serif; font-weight: 700; color: #e8650a;">&lt;2,000đ</td>
-            <td style="padding: 12px 16px; text-align: center; font-family: 'Syne', sans-serif; font-weight: 700; color: #e8650a;">&lt;55%</td>
-            <td style="padding: 12px 16px; text-align: center; font-family: 'Syne', sans-serif; font-weight: 700; color: #e8650a;">100s avg</td>
-            <td style="padding: 12px 16px; color: rgba(255,255,255,0.6); font-size: 12px;">6-Week Campaign</td>
-          </tr>
-        </tbody>
-      </table>
+      <div class="prog-grid">
+        <div class="prog-row prog-header">
+          <div class="prog-cell left">Week</div>
+          <div class="prog-cell">Impressions</div>
+          <div class="prog-cell">Clicks</div>
+          <div class="prog-cell">CTR</div>
+          <div class="prog-cell">Avg. CPC</div>
+          <div class="prog-cell">Bounce Rate</div>
+          <div class="prog-cell">Session</div>
+          <div class="prog-cell left">Focus</div>
+        </div>
+        <div class="prog-row">
+          <div class="prog-cell left"><span style="display: inline-flex; align-items: center; gap: 8px;"><span style="width: 8px; height: 8px; border-radius: 50%; background: var(--week1); display: inline-block;"></span><strong>W1</strong> 25–31/5</span></div>
+          <div class="prog-cell">5,000+</div>
+          <div class="prog-cell">100+</div>
+          <div class="prog-cell">2.0%</div>
+          <div class="prog-cell">&lt;3,500đ</div>
+          <div class="prog-cell">&lt;70%</div>
+          <div class="prog-cell">75s</div>
+          <div class="prog-cell left">Foundation</div>
+        </div>
+        <div class="prog-row alt">
+          <div class="prog-cell left"><span style="display: inline-flex; align-items: center; gap: 8px;"><span style="width: 8px; height: 8px; border-radius: 50%; background: var(--week2); display: inline-block;"></span><strong>W2</strong> 1–7/6</span></div>
+          <div class="prog-cell">15,000+</div>
+          <div class="prog-cell">400+</div>
+          <div class="prog-cell">2.8%</div>
+          <div class="prog-cell">&lt;3,000đ</div>
+          <div class="prog-cell">&lt;65%</div>
+          <div class="prog-cell">75s</div>
+          <div class="prog-cell left">Traffic Quality</div>
+        </div>
+        <div class="prog-row">
+          <div class="prog-cell left"><span style="display: inline-flex; align-items: center; gap: 8px;"><span style="width: 8px; height: 8px; border-radius: 50%; background: var(--week3); display: inline-block;"></span><strong>W3</strong> 8–14/6</span></div>
+          <div class="prog-cell">22,000+</div>
+          <div class="prog-cell">750+</div>
+          <div class="prog-cell">3.5%</div>
+          <div class="prog-cell">&lt;2,700đ</div>
+          <div class="prog-cell">&lt;60%</div>
+          <div class="prog-cell">90s</div>
+          <div class="prog-cell left">CTR &amp; Copy</div>
+        </div>
+        <div class="prog-row alt">
+          <div class="prog-cell left"><span style="display: inline-flex; align-items: center; gap: 8px;"><span style="width: 8px; height: 8px; border-radius: 50%; background: var(--week4); display: inline-block;"></span><strong>W4</strong> 15–21/6</span></div>
+          <div class="prog-cell">28,000+</div>
+          <div class="prog-cell">1,000+</div>
+          <div class="prog-cell">3.8%</div>
+          <div class="prog-cell">&lt;2,500đ</div>
+          <div class="prog-cell">&lt;58%</div>
+          <div class="prog-cell">100s</div>
+          <div class="prog-cell left">Remarketing</div>
+        </div>
+        <div class="prog-row">
+          <div class="prog-cell left"><span style="display: inline-flex; align-items: center; gap: 8px;"><span style="width: 8px; height: 8px; border-radius: 50%; background: var(--week5); display: inline-block;"></span><strong>W5</strong> 22–28/6</span></div>
+          <div class="prog-cell">40,000+</div>
+          <div class="prog-cell">1,600+</div>
+          <div class="prog-cell">4.0%</div>
+          <div class="prog-cell">&lt;2,200đ</div>
+          <div class="prog-cell">&lt;55%</div>
+          <div class="prog-cell">105s</div>
+          <div class="prog-cell left">Scaling</div>
+        </div>
+        <div class="prog-row alt">
+          <div class="prog-cell left"><span style="display: inline-flex; align-items: center; gap: 8px;"><span style="width: 8px; height: 8px; border-radius: 50%; background: var(--week6); display: inline-block;"></span><strong>W6</strong> 29/6–5/7</span></div>
+          <div class="prog-cell">35,000+</div>
+          <div class="prog-cell">1,500+</div>
+          <div class="prog-cell">4.2%</div>
+          <div class="prog-cell">&lt;2,000đ</div>
+          <div class="prog-cell">&lt;55%</div>
+          <div class="prog-cell">110s</div>
+          <div class="prog-cell left">Audit &amp; Report</div>
+        </div>
+        <div class="prog-row total">
+          <div class="prog-cell left">TOTAL</div>
+          <div class="prog-cell">145,000+</div>
+          <div class="prog-cell">5,350+</div>
+          <div class="prog-cell">3.7% avg</div>
+          <div class="prog-cell">&lt;2,000đ</div>
+          <div class="prog-cell">&lt;55%</div>
+          <div class="prog-cell">100s avg</div>
+          <div class="prog-cell left note">6-Week Campaign</div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
 
-<!-- KEY OPTIMIZATION STRATEGY -->
 <div class="summary-section">
   <p class="section-label">Strategic Framework</p>
   <div class="summary-title">Key Optimization Strategy</div>
@@ -1213,15 +1267,12 @@
   </div>
 </div>
 
-</div><!-- end .main -->
-
-<!-- FOOTER -->
-<div class="footer">
+</div><div class="footer">
   <div>
     <div class="brand">Google Ads Master Plan · danang365.com</div>
     <div style="margin-top: 4px;">Đà Nẵng Ăn Gì? – Food &amp; Local Tourism Campaign · May–July 2025</div>
   </div>
-  <div style="text-align: right;">
+  <div>
     <div style="color: rgba(255,255,255,0.6);">Prepared by Digital Marketing Team</div>
     <div style="margin-top: 4px; color: rgba(255,255,255,0.35);">Performance Marketing · Google Search Ads Specialist</div>
   </div>
