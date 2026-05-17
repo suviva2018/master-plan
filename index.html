@@ -1,0 +1,1231 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MASTER PLAN – Google Ads | Đà Nẵng Ăn Gì?</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0e0f0c;
+    --paper: #f7f4ef;
+    --card: #ffffff;
+    --accent: #e8650a;
+    --accent2: #1a5c3a;
+    --accent3: #2b4b8c;
+    --muted: #6b6b6b;
+    --border: #e2ddd6;
+    --tag-bg: #fff3ec;
+    --tag-text: #c4520a;
+    --green-bg: #eaf4ef;
+    --green-text: #1a5c3a;
+    --blue-bg: #edf1f9;
+    --blue-text: #2b4b8c;
+    --week1: #e8650a;
+    --week2: #d4922c;
+    --week3: #1a5c3a;
+    --week4: #2b4b8c;
+    --week5: #7b3faa;
+    --week6: #c0392b;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    font-size: 15px;
+    line-height: 1.65;
+  }
+
+  /* COVER */
+  .cover {
+    background: var(--ink);
+    color: #fff;
+    padding: 72px 64px 60px;
+    position: relative;
+    overflow: hidden;
+  }
+  .cover::before {
+    content: '';
+    position: absolute;
+    top: -80px; right: -80px;
+    width: 400px; height: 400px;
+    border-radius: 50%;
+    background: var(--accent);
+    opacity: 0.12;
+  }
+  .cover::after {
+    content: '';
+    position: absolute;
+    bottom: -60px; left: 200px;
+    width: 260px; height: 260px;
+    border-radius: 50%;
+    background: #1a5c3a;
+    opacity: 0.1;
+  }
+  .cover-tag {
+    display: inline-block;
+    font-family: 'Syne', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    border: 1px solid rgba(232,101,10,0.4);
+    padding: 4px 14px;
+    border-radius: 2px;
+    margin-bottom: 28px;
+  }
+  .cover h1 {
+    font-family: 'Syne', sans-serif;
+    font-size: 48px;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 8px;
+    letter-spacing: -0.02em;
+  }
+  .cover h1 span { color: var(--accent); }
+  .cover .subtitle {
+    font-size: 18px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.65);
+    margin-bottom: 40px;
+    letter-spacing: 0.01em;
+  }
+  .cover-meta {
+    display: flex;
+    gap: 32px;
+    flex-wrap: wrap;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 28px;
+  }
+  .cover-meta-item label {
+    display: block;
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.4);
+    margin-bottom: 4px;
+  }
+  .cover-meta-item span {
+    font-family: 'Syne', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    color: rgba(255,255,255,0.9);
+  }
+
+  /* SECTION LABEL */
+  .section-label {
+    font-family: 'Syne', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 24px;
+  }
+
+  /* TIMELINE STRIP */
+  .timeline-strip {
+    padding: 48px 64px 40px;
+    background: var(--card);
+    border-bottom: 1px solid var(--border);
+  }
+  .weeks-row {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 8px;
+    margin-top: 20px;
+  }
+  .week-chip {
+    padding: 12px 10px;
+    border-radius: 6px;
+    text-align: center;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 500;
+  }
+  .week-chip .wnum {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 16px;
+    display: block;
+    margin-bottom: 2px;
+  }
+  .week-chip .wdates { font-size: 10px; opacity: 0.8; }
+  .week-chip .wtheme { font-size: 11px; font-weight: 600; margin-top: 6px; }
+  .w1 { background: var(--week1); }
+  .w2 { background: var(--week2); }
+  .w3 { background: var(--week3); }
+  .w4 { background: var(--week4); }
+  .w5 { background: var(--week5); }
+  .w6 { background: var(--week6); }
+
+  /* MAIN CONTENT */
+  .main { padding: 0 64px; }
+
+  /* WEEK CARD */
+  .week-card {
+    margin: 48px 0;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    background: var(--card);
+  }
+  .week-header {
+    padding: 24px 32px;
+    color: #fff;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+  }
+  .week-header .wh-left {}
+  .week-header .phase-tag {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    opacity: 0.75;
+    margin-bottom: 4px;
+  }
+  .week-header h2 {
+    font-family: 'Syne', sans-serif;
+    font-size: 24px;
+    font-weight: 800;
+    margin-bottom: 2px;
+  }
+  .week-header .dates {
+    font-size: 12px;
+    opacity: 0.7;
+    font-weight: 400;
+  }
+  .week-header .obj-box {
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 8px;
+    padding: 12px 16px;
+    max-width: 300px;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.5;
+    flex-shrink: 0;
+  }
+  .week-header .obj-label {
+    font-size: 9px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    opacity: 0.65;
+    margin-bottom: 4px;
+  }
+
+  .week-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+  }
+  .week-section {
+    padding: 28px 32px;
+    border-right: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+  .week-section:nth-child(even) { border-right: none; }
+  .week-section:nth-last-child(-n+2) { border-bottom: none; }
+  .week-section h3 {
+    font-family: 'Syne', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .week-section h3::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  .task-list { list-style: none; }
+  .task-list li {
+    padding: 6px 0;
+    font-size: 13.5px;
+    color: #333;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    line-height: 1.5;
+  }
+  .task-list li::before {
+    content: '→';
+    font-size: 12px;
+    color: var(--accent);
+    margin-top: 1px;
+    flex-shrink: 0;
+    font-weight: 700;
+  }
+
+  .kpi-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  .kpi-item {
+    background: var(--paper);
+    border-radius: 8px;
+    padding: 10px 14px;
+  }
+  .kpi-item .kpi-label {
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 2px;
+  }
+  .kpi-item .kpi-val {
+    font-family: 'Syne', sans-serif;
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--ink);
+  }
+  .kpi-item .kpi-unit {
+    font-size: 11px;
+    color: var(--muted);
+    font-weight: 400;
+    margin-left: 2px;
+  }
+
+  .result-box {
+    background: var(--paper);
+    border-radius: 8px;
+    padding: 16px;
+    font-size: 13.5px;
+    color: #333;
+    line-height: 1.6;
+  }
+  .result-box .result-highlight {
+    display: inline-block;
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    padding: 2px 10px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+  }
+
+  /* COLOR CLASSES */
+  .bg-w1 { background: var(--week1); }
+  .bg-w2 { background: var(--week2); }
+  .bg-w3 { background: var(--week3); }
+  .bg-w4 { background: var(--week4); }
+  .bg-w5 { background: var(--week5); }
+  .bg-w6 { background: var(--week6); }
+
+  .hl-w1 { background: #fff3ec; color: #c4520a; }
+  .hl-w2 { background: #fdf4e7; color: #9a6518; }
+  .hl-w3 { background: #eaf4ef; color: #1a5c3a; }
+  .hl-w4 { background: #edf1f9; color: #2b4b8c; }
+  .hl-w5 { background: #f5eeff; color: #6a2fa0; }
+  .hl-w6 { background: #fef0ee; color: #a02020; }
+
+  /* SUMMARY SECTION */
+  .summary-section {
+    margin: 0 0 64px 0;
+  }
+  .summary-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 28px;
+    font-weight: 800;
+    margin-bottom: 8px;
+    letter-spacing: -0.01em;
+  }
+  .summary-desc {
+    color: var(--muted);
+    font-size: 14px;
+    margin-bottom: 28px;
+  }
+
+  /* TOTAL KPI TABLE */
+  .kpi-total-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+  .kpi-total-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 20px 24px;
+  }
+  .kpi-total-card .label {
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 8px;
+  }
+  .kpi-total-card .value {
+    font-family: 'Syne', sans-serif;
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--ink);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .kpi-total-card .note {
+    font-size: 12px;
+    color: var(--muted);
+  }
+
+  /* STRATEGY SECTION */
+  .strategy-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+  .strategy-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 20px 22px;
+  }
+  .strategy-card .s-icon {
+    font-size: 22px;
+    margin-bottom: 12px;
+  }
+  .strategy-card h4 {
+    font-family: 'Syne', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: var(--ink);
+  }
+  .strategy-card p {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  /* DIVIDER */
+  .divider {
+    height: 1px;
+    background: var(--border);
+    margin: 48px 0;
+  }
+
+  /* FOOTER */
+  .footer {
+    background: var(--ink);
+    color: rgba(255,255,255,0.4);
+    padding: 28px 64px;
+    font-size: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .footer .brand {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    color: rgba(255,255,255,0.8);
+  }
+
+  /* BADGE */
+  .badge {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 3px 10px;
+    border-radius: 20px;
+    margin-right: 6px;
+    margin-bottom: 6px;
+  }
+
+  /* TAG PILLS */
+  .tag-row { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+  .tag {
+    font-size: 11px;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 20px;
+    letter-spacing: 0.03em;
+  }
+  .tag.orange { background: #fff3ec; color: #c4520a; }
+  .tag.green { background: #eaf4ef; color: #1a5c3a; }
+  .tag.blue { background: #edf1f9; color: #2b4b8c; }
+  .tag.purple { background: #f5eeff; color: #6a2fa0; }
+  .tag.red { background: #fef0ee; color: #a02020; }
+  .tag.gray { background: #f2f1ee; color: #555; }
+
+  @media print {
+    body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<div class="cover">
+  <div class="cover-tag">Google Ads · Campaign Master Plan</div>
+  <h1>MASTER PLAN<br><span>DETAIL PER WEEK</span></h1>
+  <p class="subtitle">Đà Nẵng Ăn Gì? – Các Món Local Đáng Thử<br>Google Search Ads · Food &amp; Local Tourism</p>
+  <div class="cover-meta">
+    <div class="cover-meta-item">
+      <label>Campaign Period</label>
+      <span>25/05 – 05/07/2025</span>
+    </div>
+    <div class="cover-meta-item">
+      <label>Duration</label>
+      <span>6 Weeks</span>
+    </div>
+    <div class="cover-meta-item">
+      <label>Channel</label>
+      <span>Google Search Ads</span>
+    </div>
+    <div class="cover-meta-item">
+      <label>Target Market</label>
+      <span>Domestic &amp; Inbound Tourists</span>
+    </div>
+    <div class="cover-meta-item">
+      <label>Landing Page</label>
+      <span>danang365.com/vi/dac-san</span>
+    </div>
+  </div>
+</div>
+
+<!-- TIMELINE STRIP -->
+<div class="timeline-strip">
+  <p class="section-label">Campaign Roadmap Overview</p>
+  <div class="weeks-row">
+    <div class="week-chip w1">
+      <span class="wnum">W1</span>
+      <div class="wdates">25/5 – 31/5</div>
+      <div class="wtheme">Foundation &amp; Launch</div>
+    </div>
+    <div class="week-chip w2">
+      <span class="wnum">W2</span>
+      <div class="wdates">1/6 – 7/6</div>
+      <div class="wtheme">Traffic Ramp-Up</div>
+    </div>
+    <div class="week-chip w3">
+      <span class="wnum">W3</span>
+      <div class="wdates">8/6 – 14/6</div>
+      <div class="wtheme">CTR Optimization</div>
+    </div>
+    <div class="week-chip w4">
+      <span class="wnum">W4</span>
+      <div class="wdates">15/6 – 21/6</div>
+      <div class="wtheme">Audience &amp; Remarketing</div>
+    </div>
+    <div class="week-chip w5">
+      <span class="wnum">W5</span>
+      <div class="wdates">22/6 – 28/6</div>
+      <div class="wtheme">Performance Scaling</div>
+    </div>
+    <div class="week-chip w6">
+      <span class="wnum">W6</span>
+      <div class="wdates">29/6 – 5/7</div>
+      <div class="wtheme">Audit &amp; Wrap-Up</div>
+    </div>
+  </div>
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="main" style="padding-top: 16px;">
+
+<!-- ===== WEEK 1 ===== -->
+<div class="week-card">
+  <div class="week-header bg-w1">
+    <div class="wh-left">
+      <div class="phase-tag">Phase 1 · Setup</div>
+      <h2>WEEK 1 — Foundation &amp; Launch</h2>
+      <div class="dates">25 tháng 5 – 31 tháng 5, 2025</div>
+    </div>
+    <div class="obj-box">
+      <div class="obj-label">Objective</div>
+      Thiết lập toàn bộ cơ sở hạ tầng campaign. Xác định keyword universe, cấu trúc ad group, cài đặt tracking — sẵn sàng tích lũy data từ ngày đầu tiên.
+    </div>
+  </div>
+  <div class="week-body">
+    <div class="week-section">
+      <h3>Main Activities</h3>
+      <ul class="task-list">
+        <li>Keyword research chuyên sâu: 80–120 từ khóa food &amp; local tourism tại Đà Nẵng (broad, phrase, exact match)</li>
+        <li>Phân nhóm ad group theo intent: "ăn gì ở Đà Nẵng", "đặc sản Đà Nẵng", "quán ăn ngon Đà Nẵng", "món địa phương"</li>
+        <li>Cài đặt Google Tag Manager + GA4 Conversion Tracking, cấu hình Goals (session &gt;90s, scroll depth)</li>
+        <li>Soạn 3 RSA (Responsive Search Ad) cho mỗi ad group, viết 15 headlines + 4 descriptions theo công thức AIDA</li>
+        <li>Thiết lập Ad Extensions: Sitelinks (6 links), Callout (8), Structured Snippets, Location</li>
+        <li>Build Negative Keyword List v1.0: loại bỏ từ khóa không liên quan (recipe/cook at home/supermarket)</li>
+        <li>Cài đặt bidding strategy: Manual CPC với enhanced CPC, daily budget allocation</li>
+      </ul>
+      <div class="tag-row">
+        <span class="tag orange">Keyword Research</span>
+        <span class="tag blue">Tracking Setup</span>
+        <span class="tag gray">Ad Structure</span>
+        <span class="tag green">RSA Creation</span>
+      </div>
+    </div>
+    <div class="week-section">
+      <h3>KPI Targets</h3>
+      <div class="kpi-grid">
+        <div class="kpi-item">
+          <div class="kpi-label">Impressions</div>
+          <div class="kpi-val">5,000<span class="kpi-unit">+</span></div>
+        </div>
+        <div class="kpi-item">
+          <div class="kpi-label">Clicks</div>
+          <div class="kpi-val">100<span class="kpi-unit">+</span></div>
+        </div>
+        <div class="kpi-item">
+          <div class="kpi-label">CTR</div>
+          <div class="kpi-val">2.0<span class="kpi-unit">%+</span></div>
+        </div>
+        <div class="kpi-item">
+          <div class="kpi-label">Avg. CPC</div>
+          <div class="kpi-val">&lt;3,500<span class="kpi-unit">đ</span></div>
+        </div>
+        <div class="kpi-item">
+          <div class="kpi-label">Quality Score</div>
+          <div class="kpi-val">6<span class="kpi-unit">/10+</span></div>
+        </div>
+        <div class="kpi-item">
+          <div class="kpi-label">Bounce Rate</div>
+          <div class="kpi-val">&lt;70<span class="kpi-unit">%</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="week-section">
+      <h3>Expected Result</h3>
+      <div class="result-box">
+        <div class="result-highlight hl-w1">Data Collection Phase</div>
+        <p>Campaign đi vào hoạt động với cấu trúc vững chắc và dữ liệu sạch. Tracking chính xác 100% từ ngày đầu tiên. Tích lũy được <strong>benchmark data</strong> về search volume, competition level, và user behavior tại landing page — đây là nền tảng để tối ưu ở các tuần sau.</p>
+        <p style="margin-top: 10px; font-size: 13px; color: #888;">Deliverable: Full campaign audit report sau 7 ngày run.</p>
+      </div>
+    </div>
+    <div class="week-section">
+      <h3>Focus Keywords (Sample)</h3>
+      <ul class="task-list">
+        <li>"đà nẵng ăn gì ngon" — High intent, broad reach</li>
+        <li>"đặc sản đà nẵng nhất định phải thử" — Exact match, high relevance</li>
+        <li>"quán ăn ngon đà nẵng 2025" — Time-sensitive, tourist intent</li>
+        <li>"món ăn địa phương đà nẵng" — Local discovery intent</li>
+        <li>"bún mắm nêm đà nẵng" / "mỳ quảng đà nẵng" — Dish-specific</li>
+        <li>"food tour đà nẵng" — English-mix, high-value tourist segment</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ===== WEEK 2 ===== -->
+<div class="week-card">
+  <div class="week-header bg-w2">
+    <div class="wh-left">
+      <div class="phase-tag">Phase 2 · Ramp-Up</div>
+      <h2>WEEK 2 — Traffic Quality Ramp-Up</h2>
+      <div class="dates">01 tháng 6 – 07 tháng 6, 2025</div>
+    </div>
+    <div class="obj-box">
+      <div class="obj-label">Objective</div>
+      Tăng lưu lượng truy cập chất lượng cao dựa trên dữ liệu tuần 1. Loại bỏ traffic kém, tối ưu bid strategy, và cải thiện Quality Score để giảm CPC.
+    </div>
+  </div>
+  <div class="week-body">
+    <div class="week-section">
+      <h3>Main Activities</h3>
+      <ul class="task-list">
+        <li>Phân tích Search Terms Report W1: xác định query thực tế của user, thêm converting terms vào exact match</li>
+        <li>Mở rộng Negative Keyword List: loại trừ tất cả irrelevant queries, tiết kiệm budget &amp; cải thiện CTR</li>
+        <li>Điều chỉnh bid theo performance: tăng bid cho top-performing keywords 20–30%, giảm cho keywords có QS &lt;5</li>
+        <li>Traffic Quality Check: phân tích Bounce Rate, Session Duration, Pages/Session từ Google Ads traffic</li>
+        <li>Thêm 2–3 keyword cluster mới dựa trên search trend: "ăn gì Đà Nẵng hè 2025", "du lịch ẩm thực Đà Nẵng"</li>
+        <li>A/B test ad headlines: test "giá rẻ vs trải nghiệm" framing, track CTR difference</li>
+        <li>Kích hoạt Bid Adjustments theo device, time-of-day (tăng bid buổi tối 18h–22h khi user plan trip)</li>
+      </ul>
+      <div class="tag-row">
+        <span class="tag orange">Keyword Optimization</span>
+        <span class="tag red">Negative Keywords</span>
+        <span class="tag blue">Traffic Quality</span>
+        <span class="tag gray">Bid Adjustment</span>
+      </div>
+    </div>
+    <div class="week-section">
+      <h3>KPI Targets</h3>
+      <div class="kpi-grid">
+        <div class="kpi-item">
+          <div class="kpi-label">Impressions</div>
+          <div class="kpi-val">15,000<span class="kpi-unit">+</span></div>
+        </div>
+        <div class="kpi-item">
+          <div class="kpi-label">Clicks</div>
+          <div class="kpi-val">400<span class="kpi-unit">+</span></div>
+        </div>
+        <div class="kpi-item">
+          <div class="kpi-label">CTR</div>
+          <div class="kpi-val">2.8<span class="kpi-unit">%+</span></div>
+        </div>
+        <div class="kpi-item">
+          <div class="kpi-label">Avg. CPC</div>
+          <div class="kpi-val">&lt;3,000<span class="kpi-unit">đ</span></div>
+        </div>
+        <div class="kpi-item">
+          <div class="kpi-label">Bounce Rate</div>
+          <div class="kpi-val">&lt;65<span class="kpi-unit">%</span></div>
+        </div>
+        <div class="kpi-item">
+          <div class="kpi-label">Avg. Session</div>
+          <div class="kpi-val">75<span class="kpi-unit">s+</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="week-section">
+      <h3>Expected Result</h3>
+      <div class="result-box">
+        <div class="result-highlight hl-w2">Traffic Quality Improvement</div>
+        <p>CTR tăng 30–40% so với W1 nhờ negative keyword refinement và bid optimization. Quality Score các keyword chính đạt 7+/10, giúp giảm CPC tự nhiên. Traffic từ Ads có chất lượng cao hơn: Bounce Rate giảm rõ rệt, Session Duration tăng đáng kể.</p>
+        <p style="margin-top: 10px; font-size: 13px; color: #888;">Milestone: Đạt positive signal cho algorithm để chuyển sang Auto Bidding ở W3.</p>
+      </div>
+    </div>
+    <div class="week-section">
+      <h3>Optimization Checklist</h3>
+      <ul class="task-list">
+        <li>Search Terms Report review (daily)</li>
+        <li>Pause keywords với CTR &lt;0.5% sau 200 impressions</li>
+        <li>Review Ad Strength indicator — tăng lên "Excellent"</li>
+        <li>Check Landing Page Speed (Core Web Vitals) — target LCP &lt;2.5s</li>
+        <li>Verify conversion tracking firing correctly</li>
+        <li>Compare device performance: mobile vs desktop traffic quality</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ===== WEEK 3 ===== -->
+<div class="week-card">
+  <div class="week-header bg-w3">
+    <div class="wh-left">
+      <div class="phase-tag">Phase 3 · Optimization</div>
+      <h2>WEEK 3 — CTR &amp; Ad Copy Optimization</h2>
+      <div class="dates">08 tháng 6 – 14 tháng 6, 2025</div>
+    </div>
+    <div class="obj-box">
+      <div class="obj-label">Objective</div>
+      Tối ưu hóa ad creative để đạt CTR vượt trội. Tập trung vào message-market fit, ad extensions nâng cao, và dynamic search ads để capture long-tail traffic.
+    </div>
+  </div>
+  <div class="week-body">
+    <div class="week-section">
+      <h3>Main Activities</h3>
+      <ul class="task-list">
+        <li>Chạy structured A/B test trên 3 RSA: test angle "khám phá ẩm thực" vs "hướng dẫn địa phương" vs "top #1 review"</li>
+        <li>Triển khai Dynamic Search Ads (DSA) — tự động target long-tail queries từ nội dung trang danang365.com</li>
+        <li>Nâng cấp Ad Extensions: thêm Image Extensions (ảnh món ăn), Price Extensions, Promotion Extension nếu applicable</li>
+        <li>Phân tích Auction Insights: so sánh vị thế với competitors, điều chỉnh strategy accordingly</li>
+        <li>Implement Smart Bidding test: chuyển top ad group sang Target CPA / Maximize Clicks với target budget</li>
+        <li>Keyword Expansion: thêm seasonal angles "ăn gì ở Đà Nẵng mùa hè", "lịch trình ăn uống 3 ngày Đà Nẵng"</li>
+        <li>Phân tích heatmap + session recording tại landing page để tối ưu UX (dùng Hotjar/Microsoft Clarity)</li>
+      </ul>
+      <div class="tag-row">
+        <span class="tag green">CTR Optimization</span>
+        <span class="tag green">A/B Testing</span>
+        <span class="tag blue">DSA</span>
+        <span class="tag orange">Ad Extensions</span>
+      </div>
+    </div>
+    <div class="week-section">
+      <h3>KPI Targets</h3>
+      <div class="kpi-grid">
+        <div class="kpi-item">
+          <div class="kpi-label">Impressions</div>
+          <div class="kpi-val">22,000<span class="kpi-unit">+</span></div>
+        </div>
+        <div class="kpi-item">
+          <div class="kpi-label">Clicks</div>
+          <div class="kpi-val">750<span class="kpi-unit">+</span></div>
+        </div>
+        <div class="kpi-item">
+          <div class="kpi-label">CTR</div>
+          <div class="kpi-val">3.5<span class="kpi-unit">%+</span></div>
+        </div>
+        <div class="kpi-item">
+          <div class="kpi-label">Avg. CPC</div>
+          <div class="kpi-val">&lt;2,700<span class="kpi-unit">đ</span></div>
+        </div>
+        <div class="kpi-item">
+          <div class="kpi-label">Bounce Rate</div>
+          <div class="kpi-val">&lt;60<span class="kpi-unit">%</span></div>
+        </div>
+        <div class="kpi-item">
+          <div class="kpi-label">Avg. Session</div>
+          <div class="kpi-val">90<span class="kpi-unit">s+</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="week-section">
+      <h3>Expected Result</h3>
+      <div class="result-box">
+        <div class="result-highlight hl-w3">Engagement Breakthrough</div>
+        <p>CTR đạt 3.5%+ — vượt benchmark trung bình ngành food/travel tại Việt Nam (2.2%). DSA campaign bắt đầu capture đuôi dài với chi phí thấp. Dữ liệu A/B test cho thấy winning angle rõ ràng để scale trong W4–W5.</p>
+        <p style="margin-top: 10px; font-size: 13px; color: #888;">Milestone: Remarketing audience pool đủ 1,000 users để kích hoạt W4.</p>
+      </div>
+    </div>
+    <div class="week-section">
+      <h3>Ad Copy Framework (W3)</h3>
+      <ul class="task-list">
+        <li><strong>Headline formula:</strong> [Dish/Destination] + [Unique Benefit] + [CTA]</li>
+        <li><strong>Angle A:</strong> "Khám phá 15 Món Ngon Nhất Đà Nẵng – Dân Địa Phương Mách Bạn"</li>
+        <li><strong>Angle B:</strong> "Đà Nẵng Ăn Gì? – Top Đặc Sản Không Thể Bỏ Lỡ 2025"</li>
+        <li><strong>Angle C:</strong> "Ẩm Thực Đà Nẵng – Hướng Dẫn Đầy Đủ Từ A→Z Cho Du Khách"</li>
+        <li>Track: CTR, Avg Position, Impression Share per angle</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ===== WEEK 4 ===== -->
+<div class="week-card">
+  <div class="week-header bg-w4">
+    <div class="wh-left">
+      <div class="phase-tag">Phase 4 · Remarketing</div>
+      <h2>WEEK 4 — Audience Targeting &amp; Remarketing</h2>
+      <div class="dates">15 tháng 6 – 21 tháng 6, 2025</div>
+    </div>
+    <div class="obj-box">
+      <div class="obj-label">Objective</div>
+      Kích hoạt remarketing để tái tiếp cận users đã visit trang. Xây dựng audience segments có giá trị cao và triển khai RLSA để tối ưu bid cho returning users.
+    </div>
+  </div>
+  <div class="week-body">
+    <div class="week-section">
+      <h3>Main Activities</h3>
+      <ul class="task-list">
+        <li>Tạo Remarketing Audiences trong GA4: All Visitors (7d, 14d, 30d), High-Engagement Users (session &gt;2 min), Scroll 75%+ readers</li>
+        <li>Triển khai RLSA (Remarketing Lists for Search Ads): tăng bid +30–50% cho remarketing audiences trong Search campaign</li>
+        <li>Thiết lập In-Market Audiences: "Travel to Vietnam", "Food &amp; Dining", "Local Events" — overlay lên campaign chính</li>
+        <li>Custom Intent Audiences: build từ related keywords như "book hotel da nang", "da nang travel guide", "vietnam food tour"</li>
+        <li>Phân tích Audience Insights report: xác định demographics của best-performing visitors (tuổi, thiết bị, location)</li>
+        <li>Location bid adjustments: tăng bid 20% cho users từ Hà Nội, Hồ Chí Minh, Hội An — high-intent travel planning segments</li>
+        <li>Tách campaign riêng cho remarketing với messaging khác: "Bạn đã xem, đừng quên thử trước khi đến Đà Nẵng!"</li>
+      </ul>
+      <div class="tag-row">
+        <span class="tag blue">RLSA</span>
+        <span class="tag blue">Remarketing</span>
+        <span class="tag purple">Audience Targeting</span>
+        <span class="tag orange">Custom Intent</span>
+      </div>
+    </div>
+    <div class="week-section">
+      <h3>KPI Targets</h3>
+      <div class="kpi-grid">
+        <div class="kpi-item">
+          <div class="kpi-label">Impressions</div>
+          <div class="kpi-val">28,000<span class="kpi-unit">+</span></div>
+        </div>
+        <div class="kpi-item">
+          <div class="kpi-label">Clicks</div>
+          <div class="kpi-val">1,000<span class="kpi-unit">+</span></div>
+        </div>
+        <div class="kpi-item">
+          <div class="kpi-label">RLSA CTR</div>
+          <div class="kpi-val">5.0<span class="kpi-unit">%+</span></div>
+        </div>
+        <div class="kpi-item">
+          <div class="kpi-label">Avg. CPC</div>
+          <div class="kpi-val">&lt;2,500<span class="kpi-unit">đ</span></div>
+        </div>
+        <div class="kpi-item">
+          <div class="kpi-label">Return Visitors</div>
+          <div class="kpi-val">20<span class="kpi-unit">%+</span></div>
+        </div>
+        <div class="kpi-item">
+          <div class="kpi-label">Avg. Session</div>
+          <div class="kpi-val">100<span class="kpi-unit">s+</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="week-section">
+      <h3>Expected Result</h3>
+      <div class="result-box">
+        <div class="result-highlight hl-w4">Audience Depth &amp; Retention</div>
+        <p>Remarketing CTR cao hơn 2–3x so với cold audience. Return visitor rate tăng lên 20%+. RLSA giúp win back users trong giai đoạn research chuyến đi — đặc biệt hiệu quả với tourist segment đang plan trip 1–4 tuần trước khi đến Đà Nẵng.</p>
+        <p style="margin-top: 10px; font-size: 13px; color: #888;">Milestone: Build remarketing audience 3,000+ users để scaling W5.</p>
+      </div>
+    </div>
+    <div class="week-section">
+      <h3>Audience Segments Strategy</h3>
+      <ul class="task-list">
+        <li><strong>Tier 1 – Hot:</strong> Visited &gt;2 pages, session &gt;90s → bid +50%</li>
+        <li><strong>Tier 2 – Warm:</strong> All visitors 7 days → bid +30%</li>
+        <li><strong>Tier 3 – Cool:</strong> All visitors 30 days → bid +15%</li>
+        <li><strong>In-Market:</strong> Travel/Vietnam, Dining Out → bid +20%</li>
+        <li><strong>Exclusion:</strong> Existing subscribers / bounced in &lt;5s</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ===== WEEK 5 ===== -->
+<div class="week-card">
+  <div class="week-header bg-w5">
+    <div class="wh-left">
+      <div class="phase-tag">Phase 5 · Scaling</div>
+      <h2>WEEK 5 — Performance Scaling</h2>
+      <div class="dates">22 tháng 6 – 28 tháng 6, 2025</div>
+    </div>
+    <div class="obj-box">
+      <div class="obj-label">Objective</div>
+      Scale những gì đang hoạt động tốt nhất. Tối đa hóa reach với chi phí được kiểm soát. Khai thác tối đa cơ hội mùa hè cao điểm du lịch Đà Nẵng.
+    </div>
+  </div>
+  <div class="week-body">
+    <div class="week-section">
+      <h3>Main Activities</h3>
+      <ul class="task-list">
+        <li>Scale budget lên 30–40% cho top-performing ad groups (dựa trên W3–W4 data): ưu tiên CTR &gt;4% &amp; low bounce</li>
+        <li>Chuyển toàn bộ sang Smart Bidding: Maximize Clicks (main) + Target CPA (remarketing), monitor 7 ngày</li>
+        <li>Mở rộng địa lý: thêm targeting cho users từ Singapore, Bangkok, Seoul (du khách quốc tế tìm kiếm bằng tiếng Anh)</li>
+        <li>Triển khai Search Partner Network: mở rộng reach sang Google Search Partner sites</li>
+        <li>Seasonal angle push: "Đà Nẵng mùa hè 2025 ăn gì?", "ăn hải sản Đà Nẵng tươi ngon nhất"</li>
+        <li>Review toàn bộ Ad Asset Report: pin winning headlines, loại bỏ underperforming assets từ RSA</li>
+        <li>Phân tích Impression Share &amp; Lost IS: xác định budget vs quality gaps để tăng share of voice</li>
+      </ul>
+      <div class="tag-row">
+        <span class="tag purple">Smart Bidding</span>
+        <span class="tag purple">Budget Scaling</span>
+        <span class="tag blue">Geo Expansion</span>
+        <span class="tag orange">Seasonal Push</span>
+      </div>
+    </div>
+    <div class="week-section">
+      <h3>KPI Targets</h3>
+      <div class="kpi-grid">
+        <div class="kpi-item">
+          <div class="kpi-label">Impressions</div>
+          <div class="kpi-val">40,000<span class="kpi-unit">+</span></div>
+        </div>
+        <div class="kpi-item">
+          <div class="kpi-label">Clicks</div>
+          <div class="kpi-val">1,600<span class="kpi-unit">+</span></div>
+        </div>
+        <div class="kpi-item">
+          <div class="kpi-label">CTR</div>
+          <div class="kpi-val">4.0<span class="kpi-unit">%+</span></div>
+        </div>
+        <div class="kpi-item">
+          <div class="kpi-label">Avg. CPC</div>
+          <div class="kpi-val">&lt;2,200<span class="kpi-unit">đ</span></div>
+        </div>
+        <div class="kpi-item">
+          <div class="kpi-label">Bounce Rate</div>
+          <div class="kpi-val">&lt;55<span class="kpi-unit">%</span></div>
+        </div>
+        <div class="kpi-item">
+          <div class="kpi-label">Impr. Share</div>
+          <div class="kpi-val">35<span class="kpi-unit">%+</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="week-section">
+      <h3>Expected Result</h3>
+      <div class="result-box">
+        <div class="result-highlight hl-w5">Peak Performance Window</div>
+        <p>Đây là tuần đỉnh cao của campaign: clicks &amp; impressions đạt cao nhất, chi phí mỗi click giảm nhờ Quality Score được tối ưu từ W1–W4. Smart Bidding đã có đủ data để tự động tối ưu. Impression Share tăng lên 35%+ — chiếm được vị thế đáng kể trong không gian tìm kiếm ẩm thực Đà Nẵng.</p>
+        <p style="margin-top: 10px; font-size: 13px; color: #888;">Milestone: Tổng cumulative sessions từ Ads đạt 4,000+.</p>
+      </div>
+    </div>
+    <div class="week-section">
+      <h3>Scaling Checklist</h3>
+      <ul class="task-list">
+        <li>Impression Share &lt;80% → tăng budget, không tăng bid</li>
+        <li>Impression Share Lost (rank) &gt;20% → cải thiện QS, ad relevance</li>
+        <li>Check Smart Bidding learning period (7–14 ngày): không thay đổi budget trong giai đoạn này</li>
+        <li>Mobile CPC vs Desktop: điều chỉnh device bid modifier nếu gap &gt;30%</li>
+        <li>Dayparting review: peak hours 7h–9h, 12h–13h, 20h–23h cho food/travel intent</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ===== WEEK 6 ===== -->
+<div class="week-card">
+  <div class="week-header bg-w6">
+    <div class="wh-left">
+      <div class="phase-tag">Phase 6 · Analysis</div>
+      <h2>WEEK 6 — Full Audit &amp; Campaign Wrap-Up</h2>
+      <div class="dates">29 tháng 6 – 05 tháng 7, 2025</div>
+    </div>
+    <div class="obj-box">
+      <div class="obj-label">Objective</div>
+      Đánh giá toàn diện 6 tuần, đo lường hiệu quả ROI, rút ra insights chiến lược và xây dựng blueprint cho campaign tiếp theo.
+    </div>
+  </div>
+  <div class="week-body">
+    <div class="week-section">
+      <h3>Main Activities</h3>
+      <ul class="task-list">
+        <li>Full Campaign Performance Audit: review tất cả keywords, ads, extensions, audiences — phân loại Winner / Keep / Pause / Kill</li>
+        <li>Phân tích funnel traffic: Impressions → Clicks → Sessions → Engaged Users → Goal Completions — xác định drop-off points</li>
+        <li>Competitive Intelligence Report: so sánh Auction Insights 6 tuần, xác định competitors đang scale hay giảm</li>
+        <li>Landing Page Performance Deep Dive: Heatmap, session recordings, scroll depth, internal link click analysis</li>
+        <li>Build "Best Keyword Library": 30–50 từ khóa vàng với CTR cao, CPC thấp, engagement tốt để dùng cho campaign tiếp</li>
+        <li>Remarketing Audience Export: export segment lists để dùng cho Display, YouTube campaign tiếp theo</li>
+        <li>Soạn Final Report &amp; Strategic Recommendation deck cho client: tổng hợp data, insights, và roadmap Q3</li>
+      </ul>
+      <div class="tag-row">
+        <span class="tag red">Full Audit</span>
+        <span class="tag red">Final Report</span>
+        <span class="tag blue">Insights Analysis</span>
+        <span class="tag gray">Next Campaign Plan</span>
+      </div>
+    </div>
+    <div class="week-section">
+      <h3>KPI Targets (Cumulative W6)</h3>
+      <div class="kpi-grid">
+        <div class="kpi-item">
+          <div class="kpi-label">Week Impressions</div>
+          <div class="kpi-val">35,000<span class="kpi-unit">+</span></div>
+        </div>
+        <div class="kpi-item">
+          <div class="kpi-label">Week Clicks</div>
+          <div class="kpi-val">1,500<span class="kpi-unit">+</span></div>
+        </div>
+        <div class="kpi-item">
+          <div class="kpi-label">Overall CTR</div>
+          <div class="kpi-val">4.2<span class="kpi-unit">%+</span></div>
+        </div>
+        <div class="kpi-item">
+          <div class="kpi-label">Final CPC</div>
+          <div class="kpi-val">&lt;2,000<span class="kpi-unit">đ</span></div>
+        </div>
+        <div class="kpi-item">
+          <div class="kpi-label">Bounce Rate</div>
+          <div class="kpi-val">&lt;55<span class="kpi-unit">%</span></div>
+        </div>
+        <div class="kpi-item">
+          <div class="kpi-label">Avg. Session</div>
+          <div class="kpi-val">110<span class="kpi-unit">s+</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="week-section">
+      <h3>Expected Result</h3>
+      <div class="result-box">
+        <div class="result-highlight hl-w6">Strategic Intelligence Delivered</div>
+        <p>Campaign kết thúc với bộ dữ liệu chiến lược toàn diện: keyword library, audience insights, ad copy winner, competitive landscape. Final Report cung cấp ROI rõ ràng và actionable recommendations để replicate &amp; improve trong Q3 campaign.</p>
+        <p style="margin-top: 10px; font-size: 13px; color: #888;">Deliverable: Full audit deck + Keyword Library CSV + Next Campaign Brief.</p>
+      </div>
+    </div>
+    <div class="week-section">
+      <h3>Deliverables Week 6</h3>
+      <ul class="task-list">
+        <li>Performance Dashboard export (Google Looker Studio)</li>
+        <li>Best Keyword Library (30–50 keywords) với full metrics</li>
+        <li>Winning Ad Copy Collection — top 5 RSA combinations</li>
+        <li>Audience Segment Report — size, CTR, quality per segment</li>
+        <li>Strategic Recommendation — budget, channels, angles cho Q3</li>
+        <li>Campaign Archive — đảm bảo mọi setting được document đầy đủ</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- DIVIDER -->
+<div class="divider"></div>
+
+<!-- OVERALL TIMELINE SUMMARY -->
+<div class="summary-section">
+  <p class="section-label">Overall Campaign Summary</p>
+  <div class="summary-title">Tổng KPI Toàn Campaign</div>
+  <p class="summary-desc">Projected totals across all 6 weeks · danang365.com/vi/dac-san</p>
+
+  <div class="kpi-total-grid">
+    <div class="kpi-total-card">
+      <div class="label">Total Impressions</div>
+      <div class="value">145,000+</div>
+      <div class="note">Across all weeks &amp; ad groups</div>
+    </div>
+    <div class="kpi-total-card">
+      <div class="label">Total Clicks</div>
+      <div class="value">5,350+</div>
+      <div class="note">From Google Search Ads</div>
+    </div>
+    <div class="kpi-total-card">
+      <div class="label">Average CTR</div>
+      <div class="value">3.7%</div>
+      <div class="note">Industry avg: 2.2% (food/travel VN)</div>
+    </div>
+    <div class="kpi-total-card">
+      <div class="label">Final Avg. CPC</div>
+      <div class="value">&lt;2,000đ</div>
+      <div class="note">Down 43% vs W1 opening CPC</div>
+    </div>
+    <div class="kpi-total-card">
+      <div class="label">Target Bounce Rate</div>
+      <div class="value">&lt;55%</div>
+      <div class="note">Down from ~70% W1 benchmark</div>
+    </div>
+    <div class="kpi-total-card">
+      <div class="label">Avg. Session Duration</div>
+      <div class="value">100s+</div>
+      <div class="note">High engagement food content readers</div>
+    </div>
+  </div>
+
+  <!-- PROGRESSION TABLE -->
+  <div style="background: var(--card); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; margin-top: 4px;">
+    <div style="padding: 18px 24px; border-bottom: 1px solid var(--border);">
+      <p style="font-family: 'Syne', sans-serif; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted);">Weekly KPI Progression</p>
+    </div>
+    <div style="overflow-x: auto;">
+      <table style="width: 100%; border-collapse: collapse; font-size: 13px;">
+        <thead>
+          <tr style="background: var(--paper);">
+            <th style="padding: 12px 20px; text-align: left; font-weight: 600; color: var(--muted); font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em;">Week</th>
+            <th style="padding: 12px 16px; text-align: center; font-weight: 600; color: var(--muted); font-size: 11px; text-transform: uppercase;">Impressions</th>
+            <th style="padding: 12px 16px; text-align: center; font-weight: 600; color: var(--muted); font-size: 11px; text-transform: uppercase;">Clicks</th>
+            <th style="padding: 12px 16px; text-align: center; font-weight: 600; color: var(--muted); font-size: 11px; text-transform: uppercase;">CTR</th>
+            <th style="padding: 12px 16px; text-align: center; font-weight: 600; color: var(--muted); font-size: 11px; text-transform: uppercase;">Avg. CPC</th>
+            <th style="padding: 12px 16px; text-align: center; font-weight: 600; color: var(--muted); font-size: 11px; text-transform: uppercase;">Bounce Rate</th>
+            <th style="padding: 12px 16px; text-align: center; font-weight: 600; color: var(--muted); font-size: 11px; text-transform: uppercase;">Session</th>
+            <th style="padding: 12px 16px; text-align: left; font-weight: 600; color: var(--muted); font-size: 11px; text-transform: uppercase;">Focus</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-top: 1px solid var(--border);">
+            <td style="padding: 12px 20px;"><span style="display: inline-flex; align-items: center; gap: 8px;"><span style="width: 8px; height: 8px; border-radius: 50%; background: var(--week1); display: inline-block;"></span><strong>W1</strong> 25–31/5</span></td>
+            <td style="padding: 12px 16px; text-align: center;">5,000+</td>
+            <td style="padding: 12px 16px; text-align: center;">100+</td>
+            <td style="padding: 12px 16px; text-align: center;">2.0%</td>
+            <td style="padding: 12px 16px; text-align: center;">&lt;3,500đ</td>
+            <td style="padding: 12px 16px; text-align: center;">&lt;70%</td>
+            <td style="padding: 12px 16px; text-align: center;">75s</td>
+            <td style="padding: 12px 16px;">Foundation</td>
+          </tr>
+          <tr style="border-top: 1px solid var(--border); background: rgba(0,0,0,0.01);">
+            <td style="padding: 12px 20px;"><span style="display: inline-flex; align-items: center; gap: 8px;"><span style="width: 8px; height: 8px; border-radius: 50%; background: var(--week2); display: inline-block;"></span><strong>W2</strong> 1–7/6</span></td>
+            <td style="padding: 12px 16px; text-align: center;">15,000+</td>
+            <td style="padding: 12px 16px; text-align: center;">400+</td>
+            <td style="padding: 12px 16px; text-align: center;">2.8%</td>
+            <td style="padding: 12px 16px; text-align: center;">&lt;3,000đ</td>
+            <td style="padding: 12px 16px; text-align: center;">&lt;65%</td>
+            <td style="padding: 12px 16px; text-align: center;">75s</td>
+            <td style="padding: 12px 16px;">Traffic Quality</td>
+          </tr>
+          <tr style="border-top: 1px solid var(--border);">
+            <td style="padding: 12px 20px;"><span style="display: inline-flex; align-items: center; gap: 8px;"><span style="width: 8px; height: 8px; border-radius: 50%; background: var(--week3); display: inline-block;"></span><strong>W3</strong> 8–14/6</span></td>
+            <td style="padding: 12px 16px; text-align: center;">22,000+</td>
+            <td style="padding: 12px 16px; text-align: center;">750+</td>
+            <td style="padding: 12px 16px; text-align: center;">3.5%</td>
+            <td style="padding: 12px 16px; text-align: center;">&lt;2,700đ</td>
+            <td style="padding: 12px 16px; text-align: center;">&lt;60%</td>
+            <td style="padding: 12px 16px; text-align: center;">90s</td>
+            <td style="padding: 12px 16px;">CTR &amp; Copy</td>
+          </tr>
+          <tr style="border-top: 1px solid var(--border); background: rgba(0,0,0,0.01);">
+            <td style="padding: 12px 20px;"><span style="display: inline-flex; align-items: center; gap: 8px;"><span style="width: 8px; height: 8px; border-radius: 50%; background: var(--week4); display: inline-block;"></span><strong>W4</strong> 15–21/6</span></td>
+            <td style="padding: 12px 16px; text-align: center;">28,000+</td>
+            <td style="padding: 12px 16px; text-align: center;">1,000+</td>
+            <td style="padding: 12px 16px; text-align: center;">3.8%</td>
+            <td style="padding: 12px 16px; text-align: center;">&lt;2,500đ</td>
+            <td style="padding: 12px 16px; text-align: center;">&lt;58%</td>
+            <td style="padding: 12px 16px; text-align: center;">100s</td>
+            <td style="padding: 12px 16px;">Remarketing</td>
+          </tr>
+          <tr style="border-top: 1px solid var(--border);">
+            <td style="padding: 12px 20px;"><span style="display: inline-flex; align-items: center; gap: 8px;"><span style="width: 8px; height: 8px; border-radius: 50%; background: var(--week5); display: inline-block;"></span><strong>W5</strong> 22–28/6</span></td>
+            <td style="padding: 12px 16px; text-align: center;">40,000+</td>
+            <td style="padding: 12px 16px; text-align: center;">1,600+</td>
+            <td style="padding: 12px 16px; text-align: center;">4.0%</td>
+            <td style="padding: 12px 16px; text-align: center;">&lt;2,200đ</td>
+            <td style="padding: 12px 16px; text-align: center;">&lt;55%</td>
+            <td style="padding: 12px 16px; text-align: center;">105s</td>
+            <td style="padding: 12px 16px;">Scaling</td>
+          </tr>
+          <tr style="border-top: 1px solid var(--border); background: rgba(0,0,0,0.01);">
+            <td style="padding: 12px 20px;"><span style="display: inline-flex; align-items: center; gap: 8px;"><span style="width: 8px; height: 8px; border-radius: 50%; background: var(--week6); display: inline-block;"></span><strong>W6</strong> 29/6–5/7</span></td>
+            <td style="padding: 12px 16px; text-align: center;">35,000+</td>
+            <td style="padding: 12px 16px; text-align: center;">1,500+</td>
+            <td style="padding: 12px 16px; text-align: center;">4.2%</td>
+            <td style="padding: 12px 16px; text-align: center;">&lt;2,000đ</td>
+            <td style="padding: 12px 16px; text-align: center;">&lt;55%</td>
+            <td style="padding: 12px 16px; text-align: center;">110s</td>
+            <td style="padding: 12px 16px;">Audit &amp; Report</td>
+          </tr>
+          <tr style="border-top: 2px solid var(--ink); background: var(--ink); color: #fff;">
+            <td style="padding: 12px 20px; font-family: 'Syne', sans-serif; font-weight: 800;">TOTAL</td>
+            <td style="padding: 12px 16px; text-align: center; font-family: 'Syne', sans-serif; font-weight: 700; color: #e8650a;">145,000+</td>
+            <td style="padding: 12px 16px; text-align: center; font-family: 'Syne', sans-serif; font-weight: 700; color: #e8650a;">5,350+</td>
+            <td style="padding: 12px 16px; text-align: center; font-family: 'Syne', sans-serif; font-weight: 700; color: #e8650a;">3.7% avg</td>
+            <td style="padding: 12px 16px; text-align: center; font-family: 'Syne', sans-serif; font-weight: 700; color: #e8650a;">&lt;2,000đ</td>
+            <td style="padding: 12px 16px; text-align: center; font-family: 'Syne', sans-serif; font-weight: 700; color: #e8650a;">&lt;55%</td>
+            <td style="padding: 12px 16px; text-align: center; font-family: 'Syne', sans-serif; font-weight: 700; color: #e8650a;">100s avg</td>
+            <td style="padding: 12px 16px; color: rgba(255,255,255,0.6); font-size: 12px;">6-Week Campaign</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- KEY OPTIMIZATION STRATEGY -->
+<div class="summary-section">
+  <p class="section-label">Strategic Framework</p>
+  <div class="summary-title">Key Optimization Strategy</div>
+  <p class="summary-desc">5 trụ cột tối ưu hóa xuyên suốt 6 tuần campaign</p>
+
+  <div class="strategy-grid">
+    <div class="strategy-card">
+      <div class="s-icon" style="color: var(--week1); font-size: 20px; font-family: 'Syne', sans-serif; font-weight: 800;">01</div>
+      <h4>Keyword Optimization</h4>
+      <p>3-layer keyword strategy: broad catch → phrase filter → exact close. Weekly search term review, negative keyword expansion, Quality Score monitoring. Target: QS 7+ cho top keywords.</p>
+    </div>
+    <div class="strategy-card">
+      <div class="s-icon" style="color: var(--week3); font-size: 20px; font-family: 'Syne', sans-serif; font-weight: 800;">02</div>
+      <h4>CTR Optimization</h4>
+      <p>Structured A/B testing trên RSA headlines. AIDA copywriting framework. Ad Extensions đầy đủ (Sitelinks, Callout, Image). Dynamic Keyword Insertion cho highly relevant ads.</p>
+    </div>
+    <div class="strategy-card">
+      <div class="s-icon" style="color: var(--week4); font-size: 20px; font-family: 'Syne', sans-serif; font-weight: 800;">03</div>
+      <h4>Remarketing Engine</h4>
+      <p>3-tier RLSA strategy theo engagement depth. Custom audiences từ GA4 behavioral data. Remarketing-specific ad copy. Bid multiplier theo audience tier quality.</p>
+    </div>
+    <div class="strategy-card">
+      <div class="s-icon" style="color: var(--week2); font-size: 20px; font-family: 'Syne', sans-serif; font-weight: 800;">04</div>
+      <h4>Traffic Quality</h4>
+      <p>Bounce Rate &amp; Session Duration là primary quality signals. Bid adjustments theo device, location, time-of-day. Audience exclusions để loại bỏ low-quality segments.</p>
+    </div>
+    <div class="strategy-card">
+      <div class="s-icon" style="color: var(--week5); font-size: 20px; font-family: 'Syne', sans-serif; font-weight: 800;">05</div>
+      <h4>Audience Targeting</h4>
+      <p>In-Market: Travel, Food &amp; Dining. Custom Intent từ competitor keywords. Demographic targeting: 22–45, travel planners. Geo targeting: HN, HCM, và international tourists.</p>
+    </div>
+    <div class="strategy-card">
+      <div class="s-icon" style="color: var(--week6); font-size: 20px; font-family: 'Syne', sans-serif; font-weight: 800;">06</div>
+      <h4>Bidding Evolution</h4>
+      <p>W1–W2: Manual CPC (data collection). W3: Enhanced CPC. W4: Smart Bidding test. W5–W6: Maximize Clicks / Target CPA. Progressive automation theo volume data.</p>
+    </div>
+  </div>
+</div>
+
+</div><!-- end .main -->
+
+<!-- FOOTER -->
+<div class="footer">
+  <div>
+    <div class="brand">Google Ads Master Plan · danang365.com</div>
+    <div style="margin-top: 4px;">Đà Nẵng Ăn Gì? – Food &amp; Local Tourism Campaign · May–July 2025</div>
+  </div>
+  <div style="text-align: right;">
+    <div style="color: rgba(255,255,255,0.6);">Prepared by Digital Marketing Team</div>
+    <div style="margin-top: 4px; color: rgba(255,255,255,0.35);">Performance Marketing · Google Search Ads Specialist</div>
+  </div>
+</div>
+
+</body>
+</html>
